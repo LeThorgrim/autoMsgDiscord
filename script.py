@@ -1,5 +1,6 @@
 import requests
-#import time
+import time
+import random
 
 #custom rdm messages
 listMsg = [
@@ -21,12 +22,17 @@ header = {
 }
 
 #where to spam
-discordchannel = input("Enter the link of the discord channel:")
+discordChannel = input("Enter the link of the discord channel:")
 
-r = requests.post(discordchannel, data=payload, headers=header)
 
 ### LOOP ###
 
-#while(True):
-#    print('test')
-#    time.sleep(5)
+while(True):
+    wtTime = random.randint(5,10)
+    time.sleep(wtTime*60) #5 to 10 minutes of wait before sending
+
+    rd = random.randint(0,len(listMsg)-1)
+    payload = {
+    'content' : listMsg[rd]
+    }
+    requests.post(discordChannel, data=payload, headers=header)
