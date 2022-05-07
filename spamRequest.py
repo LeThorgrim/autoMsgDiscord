@@ -2,6 +2,7 @@ import requests
 import time
 import random
 
+
 #custom rdm messages
 listMsg = [
     "Hello!",
@@ -23,7 +24,6 @@ header = {
 
 #where to spam
 discordChannel = input("Enter the link of the discord channel:")
-
 
 ### LOOP ###
 
